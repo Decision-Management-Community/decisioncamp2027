@@ -1,11 +1,233 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+
+const deadlines = [
+	{ date: 'July 1, 2027', label: 'Abstract submission', note: 'Send your presentation proposal through EasyChair.' },
+	{ date: 'July 15, 2027', label: 'Author notification', note: 'Selected speakers receive the committee’s decision.' },
+	{ date: 'August 20, 2027', label: 'Final presentation', note: 'Accepted presentation files are due.' },
+];
+
+const topics = [
+	'Operational decision services',
+	'Business rules and decision modeling',
+	'Decision intelligence platforms',
+	'Agentic AI for decision-making',
+	'Machine learning and rules discovery',
+	'Decision optimization',
+	'Testing, debugging, and explanations',
+	'Decision-making under uncertainty',
+];
+
+const committee = [
+	{ name: 'Dr. Jacob Feldman', organization: 'OpenRules · USA', role: 'Chair' },
+	{ name: 'Carole-Ann Berlioz', organization: 'Sparkling Logic · USA' },
+	{ name: 'Dr. Alan N. Fish', organization: 'FICO · UK' },
+	{ name: 'Denis Gagné', organization: 'Trisotech · Canada' },
+	{ name: 'Mark Proctor', organization: 'Red Hat · UK' },
+	{ name: 'James Taylor', organization: 'Blue Polaris · USA' },
+	{ name: 'Prof. Jan Vanthienen', organization: 'KU Leuven · Belgium' },
+];
+
+const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 'RapidGen', 'Sparkling Logic'];
 ---
 
 <Layout>
-	<Welcome />
+	<header class="site-header">
+		<div class="container nav-wrap">
+			<a class="wordmark" href={base} aria-label="DecisionCAMP 2027 home">
+				<span class="wordmark-mark">DC</span>
+				<span>DecisionCAMP <strong>2027</strong></span>
+			</a>
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href="#about">About</a>
+				<a href="#deadlines">Deadlines</a>
+				<a href="#topics">Topics</a>
+				<a href="#committee">Committee</a>
+				<a href="#sponsors">Sponsors</a>
+			</nav>
+			<details class="mobile-menu">
+				<summary>Menu</summary>
+				<nav aria-label="Mobile navigation">
+					<a href="#about">About</a>
+					<a href="#deadlines">Deadlines</a>
+					<a href="#topics">Topics</a>
+					<a href="#committee">Committee</a>
+					<a href="#sponsors">Sponsors</a>
+				</nav>
+			</details>
+			<a class="header-cta" href="mailto:decisionmanagementcommunity@gmail.com?subject=DecisionCAMP%202027%20Registration">Register free</a>
+		</div>
+	</header>
+
+	<main id="main-content">
+		<section class="hero-section" aria-labelledby="hero-title">
+			<div class="container hero-card">
+				<div class="hero-copy">
+					<p class="eyebrow">Decision intelligence, in practice</p>
+					<h1 id="hero-title">Build better decisions. Together.</h1>
+					<p class="hero-lede">
+						DecisionCAMP brings together practitioners who design, build, and improve intelligent
+						decision services using business rules, AI, machine learning, and optimization.
+					</p>
+					<div class="hero-actions">
+						<a class="button button-primary" href="https://easychair.org/conferences/?conf=decisioncamp2027">Submit a presentation</a>
+						<a class="button button-secondary" href="mailto:decisionmanagementcommunity@gmail.com?subject=DecisionCAMP%202027%20Registration">Register free</a>
+					</div>
+					<p class="small-note">Abstract submissions close July 1, 2027.</p>
+				</div>
+
+				<div class="hero-visual" aria-label="Event details">
+					<img src={`${base}images/decisioncamp-2027-logo.png`} alt="DecisionCAMP 2027, September 14 through 16, 2027" />
+					<div class="event-facts">
+						<div><span class="fact-label">When</span><strong>Sep 14–16, 2027</strong></div>
+						<div><span class="fact-label">Where</span><strong>100% online</strong></div>
+						<div><span class="fact-label">Daily start</span><strong>9:00 AM ET</strong></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="about" class="intro-section section">
+			<div class="container intro-grid">
+				<div>
+					<p class="eyebrow">About the gathering</p>
+					<h2>Practical insight from people doing the work</h2>
+				</div>
+				<p class="section-lede">
+					Since 2008, DecisionCAMP has created a focused place to exchange actionable methods,
+					real-world experience, and new ideas for building transparent, governable, and effective
+					decision systems.
+				</p>
+			</div>
+		</section>
+
+		<section id="deadlines" class="section deadlines-section" aria-labelledby="deadlines-title">
+			<div class="container">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">Important dates</p>
+						<h2 id="deadlines-title">Plan your contribution</h2>
+					</div>
+					<a class="text-link" href="https://easychair.org/conferences/?conf=decisioncamp2027">Open EasyChair <span aria-hidden="true">→</span></a>
+				</div>
+				<div class="deadline-grid">
+					{deadlines.map((deadline, index) => (
+						<article class="deadline-card">
+							<span class="card-number">0{index + 1}</span>
+							<p class="card-date">{deadline.date}</p>
+							<h3>{deadline.label}</h3>
+							<p>{deadline.note}</p>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section id="topics" class="section topics-section" aria-labelledby="topics-title">
+			<div class="container topics-layout">
+				<div class="topics-intro">
+					<p class="eyebrow">Call for presentations</p>
+					<h2 id="topics-title">Share work that practitioners can use</h2>
+					<p class="section-lede">
+						We welcome case studies, lessons learned, best practices, design patterns, and
+						innovative approaches grounded in real-world decision systems.
+					</p>
+					<a class="button button-primary" href="https://easychair.org/conferences/?conf=decisioncamp2027">Submit your abstract</a>
+				</div>
+				<ul class="topic-list" aria-label="Major conference topics">
+					{topics.map((topic) => <li>{topic}</li>)}
+				</ul>
+			</div>
+		</section>
+
+		<section class="section program-section" aria-labelledby="program-title">
+			<div class="container">
+				<div class="section-heading compact-heading">
+					<div>
+						<p class="eyebrow">Program preview</p>
+						<h2 id="program-title">Three focused days, starting at 9:00 AM ET</h2>
+					</div>
+					<p class="section-kicker">A fourth day on September 17 may be added later.</p>
+				</div>
+				<div class="program-grid">
+					<article class="program-card">
+						<span class="status-pill">To be announced</span>
+						<h3>Keynote</h3>
+						<p>A leading voice will open a deeper conversation about the future of decision intelligence.</p>
+					</article>
+					<article class="program-card">
+						<span class="status-pill">To be announced</span>
+						<h3>Interactive expert panel</h3>
+						<p>Bring practical questions and compare perspectives from experienced decision-management leaders.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="committee" class="section committee-section" aria-labelledby="committee-title">
+			<div class="container">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">Organizing committee</p>
+						<h2 id="committee-title">Led by the Decision Management Community</h2>
+					</div>
+					<a class="text-link" href="https://dmcommunity.org/">Visit DMCommunity <span aria-hidden="true">→</span></a>
+				</div>
+				<div class="committee-grid">
+					{committee.map((member) => (
+						<article class:list={['person-card', { chair: member.role === 'Chair' }]}>
+							{member.role && <span class="role-label">{member.role}</span>}
+							<h3>{member.name}</h3>
+							<p>{member.organization}</p>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section id="sponsors" class="section sponsors-section" aria-labelledby="sponsors-title">
+			<div class="container sponsor-panel">
+				<div>
+					<p class="eyebrow">Community partners</p>
+					<h2 id="sponsors-title">Supported by decision-management leaders</h2>
+					<p class="small-note">Returning 2026 sponsors; 2027 participation will be reconfirmed.</p>
+				</div>
+				<ul class="sponsor-list" aria-label="Returning sponsors">
+					{sponsors.map((sponsor) => <li>{sponsor}</li>)}
+				</ul>
+			</div>
+		</section>
+
+		<section class="section final-cta-section" aria-labelledby="cta-title">
+			<div class="container final-cta">
+				<div>
+					<p class="eyebrow light-eyebrow">Join us online</p>
+					<h2 id="cta-title">Be part of DecisionCAMP 2027</h2>
+					<p>September 14–16, 2027 · Sessions begin daily at 9:00 AM ET.</p>
+				</div>
+				<div class="cta-actions">
+					<a class="button button-light" href="mailto:decisionmanagementcommunity@gmail.com?subject=DecisionCAMP%202027%20Registration">Register free</a>
+					<a class="button button-outline-light" href="https://easychair.org/conferences/?conf=decisioncamp2027">Submit a presentation</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div>
+				<a class="wordmark footer-wordmark" href={base}><span class="wordmark-mark">DC</span><span>DecisionCAMP <strong>2027</strong></span></a>
+				<p>For practitioners, by practitioners.</p>
+			</div>
+			<div class="footer-links">
+				<a href="https://dmcommunity.org/">DMCommunity</a>
+				<a href="https://www.linkedin.com/in/jacobfeldmanopenrules/">LinkedIn</a>
+				<a href="https://dmcommunity.org/about/terms-and-conditions/">Terms &amp; conditions</a>
+				<a href="mailto:decisionmanagementcommunity@gmail.com">Contact</a>
+			</div>
+		</div>
+		<div class="container footer-bottom"><span>© 2027 Decision Management Community</span><span>Decision intelligence technologies, in practice.</span></div>
+	</footer>
 </Layout>
