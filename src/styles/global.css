@@ -49,7 +49,7 @@ a { color: inherit; }
 h1, h2 { font-family: var(--font-display); color: var(--color-ink); letter-spacing: -0.025em; }
 h1 { max-width: 720px; margin: 0; font-size: clamp(44px, 6vw, 76px); line-height: 0.98; }
 .hero-title-small { font-size: clamp(30px, 4vw, 46px); line-height: 1.05; }
-h2 { margin: 0; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; }
+h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.08; }
 .hero-lede, .section-lede { color: var(--color-muted); font-size: 18px; }
 .hero-lede { max-width: 670px; margin: 26px 0 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -106,7 +106,6 @@ h2 { margin: 0; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; }
 .person-card.chair .role-label { background: rgba(255, 255, 255, 0.12); color: #f3d89e; }
 .sponsors-section { padding-top: 68px; padding-bottom: 68px; }
 .sponsor-panel { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; padding: 38px 42px; border: 1px solid var(--color-border); border-radius: 20px; background: white; box-shadow: var(--shadow-soft); }
-.sponsor-panel h2 { font-size: clamp(30px, 3.4vw, 44px); }
 .sponsor-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0; padding: 0; list-style: none; }
 .sponsor-list li { display: grid; place-items: center; min-height: 72px; padding: 12px; border: 1px solid var(--color-border); border-radius: 12px; color: var(--color-navy); font-weight: 800; text-align: center; }
 .final-cta-section { padding-top: 18px; padding-bottom: 72px; }
