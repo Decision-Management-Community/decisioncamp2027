@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Decision Management Community//DecisionCAMP 2027//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:decisioncamp-2027-day-3@dmcommunity.org
+DTSTAMP:20260831T150000Z
+DTSTART:20270916T130000Z
+DTEND:20270916T190000Z
+SUMMARY:DecisionCAMP 2027 — Day 3
+DESCRIPTION:After September 10\, visit the Register free section at https://decision-management-community.github.io/decisioncamp2027/#register for the live-event link.
+LOCATION:Online
+URL:https://decision-management-community.github.io/decisioncamp2027/#register
+END:VEVENT
+END:VCALENDAR

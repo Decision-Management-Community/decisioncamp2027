@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const registrationEndpoint =
+	'https://script.google.com/macros/s/AKfycbzhhEpav9fB7T6p5uwfvigGDHeBVSAb0ftLRH7T05BC1ofbMA9llC70DpOjoB5jK4QOFg/exec';
 
 const deadlines = [
 	{ date: 'July 1, 2027', label: 'Abstract submission', note: 'Send your presentation proposal through EasyChair.' },
@@ -55,9 +57,10 @@ const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 
 					<a href="#topics">Topics</a>
 					<a href="#committee">Committee</a>
 					<a href="#sponsors">Sponsors</a>
+					<a href="#register">Register free</a>
 				</nav>
 			</details>
-			<a class="header-cta" href="mailto:decisionmanagementcommunity@gmail.com?subject=DecisionCAMP%202027%20Registration">Register free</a>
+			<a class="header-cta" href="#register">Register free</a>
 		</div>
 	</header>
 
@@ -75,7 +78,7 @@ const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 
 					</p>
 					<div class="hero-actions">
 						<a class="button button-primary" href="https://easychair.org/conferences/?conf=decisioncamp2027">Submit a presentation</a>
-						<a class="button button-secondary" href="mailto:decisionmanagementcommunity@gmail.com?subject=DecisionCAMP%202027%20Registration">Register free</a>
+						<a class="button button-secondary" href="#register">Register free</a>
 					</div>
 					<p class="small-note">Abstract submissions close July 1, 2027.</p>
 				</div>
@@ -243,6 +246,88 @@ const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 
 			</div>
 		</section>
 
+		<section id="register" class="section registration-section" aria-labelledby="register-title">
+			<div class="container registration-panel">
+				<div class="registration-intro">
+					<p class="eyebrow">Register free</p>
+					<h2 id="register-title">Save your place at DecisionCAMP 2027</h2>
+					<p class="section-lede">
+						Join us online September 14–16, 2027, from 9:00 AM to 3:00 PM Eastern Time each day.
+					</p>
+					<ul class="registration-benefits">
+						<li>Receive an email confirming your registration.</li>
+						<li>Get three calendar files—one for each conference day.</li>
+						<li>Return here after September 10 for the live-event link.</li>
+					</ul>
+					<div class="live-link-note">
+						<strong>Live-event link</strong>
+						<span>Available in this section after September 10, 2027.</span>
+					</div>
+				</div>
+
+				<div class="registration-form-card">
+					<form
+						class="registration-form"
+						action={registrationEndpoint}
+						method="post"
+						target="registration-response-frame"
+						data-registration-form
+					>
+						<div class="form-grid">
+							<label class="form-field">
+								<span>Name <em>required</em></span>
+								<input type="text" name="name" autocomplete="name" maxlength="120" required />
+							</label>
+							<label class="form-field">
+								<span>Email <em>required</em></span>
+								<input type="email" name="email" autocomplete="email" maxlength="254" required />
+							</label>
+							<label class="form-field">
+								<span>Organization <em>optional</em></span>
+								<input type="text" name="organization" autocomplete="organization" maxlength="160" />
+							</label>
+							<label class="form-field">
+								<span>Website <em>optional</em></span>
+								<input type="url" name="website" autocomplete="url" maxlength="300" placeholder="https://" />
+							</label>
+							<label class="form-field form-field-wide">
+								<span>Comments <em>optional</em></span>
+								<textarea name="comments" rows="4" maxlength="2000"></textarea>
+							</label>
+						</div>
+
+						<label class="consent-field">
+							<input type="checkbox" name="consent" value="yes" required />
+							<span>I agree to receive emails about DecisionCAMP 2027. I can contact the organizers to opt out.</span>
+						</label>
+
+						<label class="registration-honeypot" aria-hidden="true">
+							Company
+							<input type="text" name="company" tabindex="-1" autocomplete="off" />
+						</label>
+						<input type="hidden" name="source" value="DecisionCAMP 2027 website" />
+
+						<button class="button button-primary registration-submit" type="submit">Register free</button>
+						<p class="form-note">Your details are used only for DecisionCAMP 2027 registration and event updates.</p>
+						<p class="form-status" role="status" aria-live="polite" data-registration-status></p>
+					</form>
+
+					<div class="registration-success" data-registration-success tabindex="-1" hidden>
+						<span class="success-mark" aria-hidden="true">✓</span>
+						<h3>You’re registered</h3>
+						<p>Check your email for confirmation and three calendar attachments.</p>
+						<p>You can also download the calendar files now:</p>
+						<div class="calendar-links">
+							<a href={`${base}calendar/decisioncamp-2027-day-1.ics`} download>September 14</a>
+							<a href={`${base}calendar/decisioncamp-2027-day-2.ics`} download>September 15</a>
+							<a href={`${base}calendar/decisioncamp-2027-day-3.ics`} download>September 16</a>
+						</div>
+					</div>
+					<iframe class="registration-response-frame" name="registration-response-frame" title="Registration response" hidden></iframe>
+				</div>
+			</div>
+		</section>
+
 		<section class="section final-cta-section" aria-labelledby="cta-title">
 			<div class="container final-cta">
 				<div>
@@ -251,7 +336,7 @@ const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 
 					<p>September 14–16, 2027 · Sessions begin daily at 9:00 AM ET.</p>
 				</div>
 				<div class="cta-actions">
-					<a class="button button-light" href="mailto:decisionmanagementcommunity@gmail.com?subject=DecisionCAMP%202027%20Registration">Register free</a>
+					<a class="button button-light" href="#register">Register free</a>
 					<a class="button button-outline-light" href="https://easychair.org/conferences/?conf=decisioncamp2027">Submit a presentation</a>
 				</div>
 			</div>
@@ -273,4 +358,61 @@ const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 
 		</div>
 		<div class="container footer-bottom"><span>© 2027 Decision Management Community</span><span>Decision intelligence technologies, in practice.</span></div>
 	</footer>
+
+	<script is:inline>
+		const registrationForm = document.querySelector('[data-registration-form]');
+		const registrationStatus = document.querySelector('[data-registration-status]');
+		const registrationSuccess = document.querySelector('[data-registration-success]');
+		const registrationButton = registrationForm?.querySelector('button[type="submit"]');
+		const registrationFrame = document.querySelector('iframe[name="registration-response-frame"]');
+		let registrationTimeout;
+		let registrationSubmitted = false;
+
+		const showRegistrationSuccess = () => {
+			clearTimeout(registrationTimeout);
+			registrationForm.hidden = true;
+			registrationSuccess.hidden = false;
+			registrationSuccess.focus();
+		};
+
+		registrationForm?.addEventListener('submit', () => {
+			if (!registrationForm.checkValidity()) return;
+			registrationSubmitted = true;
+			registrationButton.disabled = true;
+			registrationButton.textContent = 'Registering…';
+			registrationStatus.textContent = 'Submitting your registration…';
+
+			clearTimeout(registrationTimeout);
+			registrationTimeout = window.setTimeout(() => {
+				registrationButton.disabled = false;
+				registrationButton.textContent = 'Register free';
+				registrationStatus.textContent = 'Registration is taking longer than expected. Please try again or contact the organizers.';
+			}, 20000);
+		});
+
+		registrationFrame?.addEventListener('load', () => {
+			if (!registrationSubmitted) return;
+			window.setTimeout(() => {
+				if (!registrationForm.hidden) showRegistrationSuccess();
+			}, 250);
+		});
+
+		window.addEventListener('message', (event) => {
+			const trustedGoogleOrigin =
+				event.origin === 'https://script.google.com' ||
+				event.origin.endsWith('.googleusercontent.com') ||
+				event.origin === 'null';
+			if (!trustedGoogleOrigin || event.data?.type !== 'decisioncamp-registration') return;
+
+			clearTimeout(registrationTimeout);
+			if (event.data.status === 'success') {
+				showRegistrationSuccess();
+				return;
+			}
+
+			registrationButton.disabled = false;
+			registrationButton.textContent = 'Register free';
+			registrationStatus.textContent = event.data.message || 'Registration could not be completed. Please try again.';
+		});
+	</script>
 </Layout>
