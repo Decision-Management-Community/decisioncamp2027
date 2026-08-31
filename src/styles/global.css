@@ -48,6 +48,7 @@ a { color: inherit; }
 .eyebrow { margin: 0 0 12px; color: var(--color-gold); font-size: 12px; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
 h1, h2 { font-family: var(--font-display); color: var(--color-ink); letter-spacing: -0.025em; }
 h1 { max-width: 720px; margin: 0; font-size: clamp(44px, 6vw, 76px); line-height: 0.98; }
+.hero-title-small { font-size: clamp(30px, 4vw, 46px); line-height: 1.05; }
 h2 { margin: 0; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; }
 .hero-lede, .section-lede { color: var(--color-muted); font-size: 18px; }
 .hero-lede { max-width: 670px; margin: 26px 0 0; }
