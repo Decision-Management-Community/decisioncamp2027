@@ -58,11 +58,11 @@ h2 { margin: 0; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; }
 .button-primary:hover { background: #8f171d; }
 .button-secondary { border: 1px solid #cfc7b9; background: white; color: var(--color-navy); }
 .small-note { margin: 14px 0 0; color: var(--color-muted); font-size: 13px; }
-.hero-visual { align-self: start; margin-top: -16px; padding: 26px; border: 1px solid rgba(24, 56, 95, 0.12); border-radius: 20px; background: rgba(255, 255, 255, 0.78); }
+.hero-visual { align-self: start; margin-top: -16px; }
+.hero-logo-card { padding: 26px; border: 1px solid rgba(24, 56, 95, 0.12); border-radius: 20px; background: rgba(255, 255, 255, 0.78); }
 .hero-visual img { width: 100%; filter: drop-shadow(0 8px 14px rgba(24, 56, 95, 0.08)); }
-.technology-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
-.technology-item { display: flex; align-items: center; gap: 9px; min-width: 0; color: var(--color-navy); font-size: 12px; font-weight: 700; line-height: 1.25; }
-.technology-item:last-child { grid-column: 1 / -1; width: 50%; justify-self: center; }
+.technology-list { display: grid; grid-template-columns: 1fr; gap: 9px; margin-top: 16px; }
+.technology-item { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 8px 12px; border: 1px solid rgba(24, 56, 95, 0.1); border-radius: 12px; background: rgba(255, 255, 255, 0.72); color: var(--color-navy); font-size: 13px; font-weight: 700; line-height: 1.25; }
 .technology-icon { display: inline-grid; flex: 0 0 auto; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: rgba(11, 61, 155, 0.08); color: var(--color-blue); }
 .technology-icon svg { width: 21px; height: 21px; }
 .technology-item:nth-child(2) .technology-icon { background: rgba(169, 31, 36, 0.08); color: var(--color-red); }
@@ -150,7 +150,7 @@ h2 { margin: 0; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; }
 	h1 { font-size: clamp(42px, 13vw, 58px); }
 	.hero-actions { align-items: stretch; flex-direction: column; }
 	.button { width: 100%; }
-	.hero-visual { padding: 18px; }
+	.hero-logo-card { padding: 18px; }
 	.intro-grid { grid-template-columns: 1fr; gap: 24px; }
 	.section { padding: 62px 0; }
 	.section-heading { align-items: flex-start; flex-direction: column; gap: 20px; }
