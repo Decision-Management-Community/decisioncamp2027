@@ -58,8 +58,17 @@ h2 { margin: 0; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; }
 .button-primary:hover { background: #8f171d; }
 .button-secondary { border: 1px solid #cfc7b9; background: white; color: var(--color-navy); }
 .small-note { margin: 14px 0 0; color: var(--color-muted); font-size: 13px; }
-.hero-visual { padding: 26px; border: 1px solid rgba(24, 56, 95, 0.12); border-radius: 20px; background: rgba(255, 255, 255, 0.78); }
+.hero-visual { align-self: start; margin-top: -16px; padding: 26px; border: 1px solid rgba(24, 56, 95, 0.12); border-radius: 20px; background: rgba(255, 255, 255, 0.78); }
 .hero-visual img { width: 100%; filter: drop-shadow(0 8px 14px rgba(24, 56, 95, 0.08)); }
+.technology-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.technology-item { display: flex; align-items: center; gap: 9px; min-width: 0; color: var(--color-navy); font-size: 12px; font-weight: 700; line-height: 1.25; }
+.technology-item:last-child { grid-column: 1 / -1; width: 50%; justify-self: center; }
+.technology-icon { display: inline-grid; flex: 0 0 auto; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: rgba(11, 61, 155, 0.08); color: var(--color-blue); }
+.technology-icon svg { width: 21px; height: 21px; }
+.technology-item:nth-child(2) .technology-icon { background: rgba(169, 31, 36, 0.08); color: var(--color-red); }
+.technology-item:nth-child(3) .technology-icon { background: rgba(174, 123, 37, 0.11); color: var(--color-gold); }
+.technology-item:nth-child(4) .technology-icon { background: rgba(79, 127, 50, 0.1); color: var(--color-green); }
+.technology-item:nth-child(5) .technology-icon { background: rgba(24, 56, 95, 0.09); color: var(--color-navy); }
 .section { padding: 82px 0; }
 .intro-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 80px; align-items: end; }
 .section-lede { margin: 0; }
@@ -122,7 +131,7 @@ h2 { margin: 0; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; }
 	.desktop-nav { display: none; }
 	.mobile-menu { display: block; }
 	.hero-card { grid-template-columns: 1fr; }
-	.hero-visual { max-width: 620px; }
+	.hero-visual { max-width: 620px; margin-top: 0; }
 	.deadline-grid { grid-template-columns: 1fr; }
 	.committee-grid { grid-template-columns: repeat(2, 1fr); }
 	.sponsor-panel { grid-template-columns: 1fr; }
