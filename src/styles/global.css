@@ -90,7 +90,8 @@ h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.08; }
 .topics-layout { display: grid; grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr); gap: clamp(48px, 8vw, 100px); align-items: center; }
 .topics-section h2 { color: white; }
 .topics-section .section-lede { color: rgba(255, 255, 255, 0.72); margin-top: 24px; }
-.topics-intro .button { margin-top: 26px; }
+.submission-options { margin: 26px 0 0; color: rgba(255, 255, 255, 0.82); }
+.submission-options a { color: #f3d89e; font-weight: 700; }
 .topic-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none; }
 .topic-list li { min-height: 86px; display: flex; align-items: center; padding: 18px 20px 18px 48px; position: relative; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; background: rgba(255, 255, 255, 0.055); font-weight: 600; line-height: 1.35; }
 .topic-list li::before { content: ''; position: absolute; left: 20px; width: 12px; height: 12px; border: 2px solid var(--color-gold); border-radius: 50%; }
