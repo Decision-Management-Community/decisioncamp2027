@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+
+const vendorNews = [
+	{
+		vendor: 'OpenRules',
+		mark: 'OR',
+		title: 'OpenRules 11.1.0 strengthens Rule Learner',
+		description:
+			'OpenRules Release 11.1.0 introduces an enhanced Rule Learner for business users. Starting with examples of a business problem, it can generate working decision models that users can test and refine.',
+		url: 'https://openrulesdecisionmanager.com/release-notes-11-1/',
+	},
+	{
+		vendor: 'Bluebird Optimization',
+		mark: 'BO',
+		title: 'Inventory optimization under uncertainty delivers major savings',
+		description:
+			'Bluebird Optimization shares a client success story in which uncertainty-aware inventory optimization produced a proof of concept with projected seven-figure inventory savings and improved service levels.',
+		url: 'https://www.bluebirdoptimization.com/blog-posts-en/success-story-inventory-optimization-under-uncertainty-at-dryft',
+	},
+	{
+		vendor: 'Aletyx',
+		mark: 'AX',
+		title: 'Decision Control Sandbox launches on AWS Marketplace',
+		description:
+			'Aletyx Decision Control Sandbox can automatically provision a complete decision automation platform on AWS in minutes, supporting DMN modeling, AI-powered features, and one-click publishing.',
+		url: 'https://aletyx.ai/aletyx-decision-control-sandbox-live-on-aws/',
+	},
+];
+---
+
+<Layout
+	title="Vendor News | DecisionCAMP 2027"
+	description="Selected news from DecisionCAMP 2027 community sponsors OpenRules, Bluebird Optimization, and Aletyx."
+>
+	<header class="site-header">
+		<div class="container nav-wrap">
+			<a class="wordmark" href={base} aria-label="DecisionCAMP 2027 home">
+				<span class="wordmark-mark">DC</span>
+				<span>DecisionCAMP <strong>2027</strong></span>
+			</a>
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href={`${base}#about`}>About</a>
+				<a href={`${base}call-for-presentations/`}>CFP</a>
+				<a href={`${base}#deadlines`}>Deadlines</a>
+				<a href={`${base}#topics`}>Topics</a>
+				<a href={`${base}#committee`}>Committee</a>
+				<a href={`${base}#sponsors`}>Sponsors</a>
+				<a href={`${base}vendor-news/`} aria-current="page">Vendor News</a>
+			</nav>
+			<details class="mobile-menu">
+				<summary>Menu</summary>
+				<nav aria-label="Mobile navigation">
+					<a href={`${base}#about`}>About</a>
+					<a href={`${base}call-for-presentations/`}>CFP</a>
+					<a href={`${base}#deadlines`}>Deadlines</a>
+					<a href={`${base}#topics`}>Topics</a>
+					<a href={`${base}#committee`}>Committee</a>
+					<a href={`${base}#sponsors`}>Sponsors</a>
+					<a href={`${base}vendor-news/`} aria-current="page">Vendor News</a>
+					<a href={`${base}#register`}>Register free</a>
+				</nav>
+			</details>
+			<a class="header-cta" href={`${base}#register`}>Register free</a>
+		</div>
+	</header>
+
+	<main id="main-content" class="vendor-news-page">
+		<section class="vendor-news-hero" aria-labelledby="vendor-news-title">
+			<div class="container vendor-news-hero-inner">
+				<p class="eyebrow">From the community</p>
+				<h1 id="vendor-news-title" class="hero-title-small">Vendor News</h1>
+				<p class="hero-lede">
+					Selected product announcements and practical stories from DecisionCAMP community sponsors.
+				</p>
+			</div>
+		</section>
+
+		<section class="section" aria-label="Vendor announcements">
+			<div class="container vendor-news-grid">
+				{vendorNews.map((item, index) => (
+					<article class="vendor-news-card">
+						<div class="vendor-news-card-top">
+							<span class="vendor-news-mark" aria-hidden="true">{item.mark}</span>
+							<div>
+								<p class="vendor-news-number">News {String(index + 1).padStart(2, '0')}</p>
+								<p class="vendor-news-name">{item.vendor}</p>
+							</div>
+						</div>
+						<h2>{item.title}</h2>
+						<p>{item.description}</p>
+						<a class="text-link" href={item.url} target="_blank" rel="noopener noreferrer">
+							Read the full announcement <span aria-hidden="true">↗</span>
+						</a>
+					</article>
+				))}
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div>
+				<a class="wordmark footer-wordmark" href={base}><span class="wordmark-mark">DC</span><span>DecisionCAMP <strong>2027</strong></span></a>
+				<p>For practitioners, by practitioners.</p>
+			</div>
+			<div class="footer-links">
+				<a href="https://dmcommunity.org/">DMCommunity</a>
+				<a href="https://www.linkedin.com/in/jacobfeldmanopenrules/">LinkedIn</a>
+				<a href="https://dmcommunity.org/about/terms-and-conditions/">Terms &amp; conditions</a>
+				<a href="mailto:decisionmanagementcommunity@gmail.com">Contact</a>
+			</div>
+		</div>
+		<div class="container footer-bottom"><span>© 2027 Decision Management Community</span><span>Decision intelligence technologies, in practice.</span></div>
+	</footer>
+</Layout>
