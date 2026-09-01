@@ -108,6 +108,7 @@ h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.08; }
 .sponsor-panel { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; padding: 38px 42px; border: 1px solid var(--color-border); border-radius: 20px; background: white; box-shadow: var(--shadow-soft); }
 .sponsor-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0; padding: 0; list-style: none; }
 .sponsor-list li { display: grid; place-items: center; min-height: 72px; padding: 12px; border: 1px solid var(--color-border); border-radius: 12px; color: var(--color-navy); font-weight: 800; text-align: center; }
+.sponsor-list a { display: grid; width: 100%; min-height: 46px; place-items: center; color: inherit; }
 .registration-section { background: var(--color-cream); }
 .registration-panel { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: clamp(42px, 7vw, 84px); align-items: start; }
 .registration-intro { padding-top: 16px; }

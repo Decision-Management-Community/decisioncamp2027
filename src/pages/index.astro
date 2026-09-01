@@ -32,7 +32,20 @@ const committee = [
 	{ name: 'Prof. Jan Vanthienen', organization: 'KU Leuven · Belgium' },
 ];
 
-const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 'RapidGen', 'Sparkling Logic'];
+const sponsors = [
+	{ name: 'OpenRules', url: 'http://OpenRulesDecisionManager.com' },
+	{ name: 'Sapiens Decision', url: 'http://www.sapiensdecision.com/' },
+	{ name: 'Trisotech', url: 'https://www.trisotech.com/digital-enterprise-suite/' },
+	{ name: 'Blue Polaris', url: 'http://bluepolaris.com' },
+	{ name: 'RapidGen', url: 'http://rapidgen.com/' },
+	{ name: 'Sparkling Logic', url: 'http://www.sparklinglogic.com/' },
+	{ name: 'Aletyx', url: 'https://aletyx.com/' },
+	{ name: 'Rules Matix', url: 'http://www.rulesmatix.com/' },
+	{ name: 'FlexRule', url: 'http://www.flexrule.com/' },
+	{ name: 'KU Leuven', url: 'http://www.kuleuven.be/' },
+	{ name: 'RuleML', url: 'http://ruleml.org/' },
+	{ name: 'Bit Bros', url: 'https://bitbrosdata.com/' },
+];
 ---
 
 <Layout>
@@ -236,12 +249,14 @@ const sponsors = ['OpenRules', 'Sapiens Decision', 'Trisotech', 'Blue Polaris', 
 		<section id="sponsors" class="section sponsors-section" aria-labelledby="sponsors-title">
 			<div class="container sponsor-panel">
 				<div>
-					<p class="eyebrow">Community partners</p>
+					<p class="eyebrow">Community Sponsors</p>
 					<h2 id="sponsors-title">Supported by decision-management leaders</h2>
 					<p class="small-note">Returning 2026 sponsors; 2027 participation will be reconfirmed.</p>
 				</div>
 				<ul class="sponsor-list" aria-label="Returning sponsors">
-					{sponsors.map((sponsor) => <li>{sponsor}</li>)}
+					{sponsors.map((sponsor) => (
+						<li><a href={sponsor.url} target="_blank" rel="noopener">{sponsor.name}</a></li>
+					))}
 				</ul>
 			</div>
 		</section>
