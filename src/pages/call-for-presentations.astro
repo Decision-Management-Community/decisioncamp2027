@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+
+const topics = [
+	'Decision Intelligence',
+	'Adding AI agent capabilities',
+	'Operational business decision services',
+	'Business rules and decision modeling',
+	'Rules discovery and machine learning',
+	'Decision optimization',
+	'Decision deployment, testing, debugging, and execution',
+	'Decision-making under uncertainty',
+	'Decision explanations',
+	'Knowledge representation and automatic reasoning with rules',
+];
+
+const preferredPresentations = [
+	'Case studies and lessons learned',
+	'Best practices',
+	'Innovative approaches to decision modeling',
+	'Design patterns, tips, and techniques',
+];
+
+const abstractDetails = [
+	'Title of the presentation',
+	'A summary of up to 500 words',
+	'Industry sector or sectors, when applicable',
+	'Key technologies included',
+];
+
+const presenterDetails = [
+	'Full name',
+	'Company',
+	'Title',
+	'Address',
+	'Telephone number',
+	'Email address',
+	'A biography of approximately 200 words describing your experience, years involved, relevant products or projects, and your primary role. This biography will appear on the DecisionCAMP website.',
+];
+
+const dates = [
+	{ label: 'Abstract submission', date: 'July 1, 2027' },
+	{ label: 'Author notification', date: 'July 15, 2027' },
+	{ label: 'Presentation submission', date: 'August 20, 2027' },
+	{ label: 'DecisionCAMP', date: 'September 14–16, 2027' },
+];
+---
+
+<Layout
+	title="Call for Presentations | DecisionCAMP 2027"
+	description="Submit a practical presentation for DecisionCAMP 2027, the free online conference on Decision Intelligence technologies."
+>
+	<header class="site-header">
+		<div class="container nav-wrap">
+			<a class="wordmark" href={base} aria-label="DecisionCAMP 2027 home">
+				<span class="wordmark-mark">DC</span>
+				<span>DecisionCAMP <strong>2027</strong></span>
+			</a>
+			<nav class="desktop-nav" aria-label="Primary navigation">
+				<a href={`${base}#about`}>About</a>
+				<a href={`${base}call-for-presentations/`} aria-current="page">CFP</a>
+				<a href={`${base}#deadlines`}>Deadlines</a>
+				<a href={`${base}#topics`}>Topics</a>
+				<a href={`${base}#committee`}>Committee</a>
+				<a href={`${base}#sponsors`}>Sponsors</a>
+			</nav>
+			<details class="mobile-menu">
+				<summary>Menu</summary>
+				<nav aria-label="Mobile navigation">
+					<a href={`${base}#about`}>About</a>
+					<a href={`${base}call-for-presentations/`} aria-current="page">CFP</a>
+					<a href={`${base}#deadlines`}>Deadlines</a>
+					<a href={`${base}#topics`}>Topics</a>
+					<a href={`${base}#committee`}>Committee</a>
+					<a href={`${base}#sponsors`}>Sponsors</a>
+					<a href={`${base}#register`}>Register free</a>
+				</nav>
+			</details>
+			<a class="header-cta" href={`${base}#register`}>Register free</a>
+		</div>
+	</header>
+
+	<main id="main-content" class="cfp-page">
+		<section class="cfp-hero" aria-labelledby="cfp-title">
+			<div class="container cfp-hero-inner">
+				<p class="eyebrow">DecisionCAMP 2027</p>
+				<h1 id="cfp-title" class="hero-title-small">Call for Presentations</h1>
+				<p class="hero-lede">
+					Share practical experience, implementation lessons, and new approaches with the
+					Decision Intelligence community.
+				</p>
+				<div class="hero-actions">
+					<a class="button button-primary" href="https://easychair.org/conferences/?conf=decisioncamp2027" target="_blank" rel="noopener noreferrer">Submit through EasyChair</a>
+					<a class="button button-secondary" href="mailto:jacobfeldman@openrules.com">Email your submission</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section cfp-content-section">
+			<div class="container cfp-layout">
+				<article class="cfp-content">
+					<section aria-labelledby="topics-to-submit">
+						<p class="eyebrow">Presentation scope</p>
+						<h2 id="topics-to-submit">What Topics to Submit</h2>
+						<p>
+							We are seeking presentations about practical applications of Decision Intelligence
+							technologies—from expert systems, rule engines, optimization solvers, and machine
+							learning to the latest advances in AI. Topics may include, but are not limited to:
+						</p>
+						<ul class="cfp-topic-list">
+							{topics.map((topic) => <li>{topic}</li>)}
+						</ul>
+
+						<h3>We are particularly interested in</h3>
+						<ul>
+							{preferredPresentations.map((item) => <li>{item}</li>)}
+						</ul>
+						<p>
+							Preferred presentations focus on real-world uses of business rules and decision
+							management technology, especially working implementations that help end-user
+							organizations automate and improve decisions.
+						</p>
+						<p class="cfp-note">
+							Submissions will not be selected if they directly promote products or services or
+							are primarily marketing presentations.
+						</p>
+					</section>
+
+					<section aria-labelledby="how-to-submit">
+						<p class="eyebrow">Submission instructions</p>
+						<h2 id="how-to-submit">How to Submit</h2>
+						<p>
+							Submit your presentation abstract in PDF format through{' '}
+							<a href="https://easychair.org/conferences/?conf=decisioncamp2027" target="_blank" rel="noopener noreferrer">EasyChair</a>{' '}
+							by <strong>July 1, 2027</strong>.
+						</p>
+						<p>
+							If you have difficulty using EasyChair, email your submission directly to{' '}
+							<a href="mailto:jacobfeldman@openrules.com">jacobfeldman@openrules.com</a>.
+						</p>
+						<p>
+							The organizing committee will review your abstract and notify you by{' '}
+							<strong>July 15, 2027</strong>. If selected, submit the complete presentation in PDF
+							format by <strong>August 20, 2027</strong>.
+						</p>
+
+						<div class="cfp-requirements">
+							<section class="cfp-card" aria-labelledby="abstract-details">
+								<h3 id="abstract-details">Your abstract should include</h3>
+								<ul>{abstractDetails.map((item) => <li>{item}</li>)}</ul>
+							</section>
+							<section class="cfp-card" aria-labelledby="presenter-details">
+								<h3 id="presenter-details">For each presenter, provide</h3>
+								<ul>{presenterDetails.map((item) => <li>{item}</li>)}</ul>
+							</section>
+						</div>
+						<p><strong>All accepted presentations will be published on this website.</strong></p>
+					</section>
+				</article>
+
+				<aside class="cfp-dates" aria-labelledby="cfp-dates-title">
+					<p class="eyebrow">Key dates</p>
+					<h2 id="cfp-dates-title">DecisionCAMP Dates</h2>
+					<dl>
+						{dates.map((item) => (
+							<div>
+								<dt>{item.label}</dt>
+								<dd>{item.date}</dd>
+							</div>
+						))}
+					</dl>
+					<a class="button button-primary" href="https://easychair.org/conferences/?conf=decisioncamp2027" target="_blank" rel="noopener noreferrer">Submit your abstract</a>
+				</aside>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div>
+				<a class="wordmark footer-wordmark" href={base}><span class="wordmark-mark">DC</span><span>DecisionCAMP <strong>2027</strong></span></a>
+				<p>For practitioners, by practitioners.</p>
+			</div>
+			<div class="footer-links">
+				<a href="https://dmcommunity.org/">DMCommunity</a>
+				<a href="https://www.linkedin.com/in/jacobfeldmanopenrules/">LinkedIn</a>
+				<a href="https://dmcommunity.org/about/terms-and-conditions/">Terms &amp; conditions</a>
+				<a href="mailto:decisionmanagementcommunity@gmail.com">Contact</a>
+			</div>
+		</div>
+		<div class="container footer-bottom"><span>© 2027 Decision Management Community</span><span>Decision intelligence technologies, in practice.</span></div>
+	</footer>
+</Layout>

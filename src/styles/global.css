@@ -152,6 +152,32 @@ h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.08; }
 .cta-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
 .button-light { background: white; color: var(--color-navy); }
 .button-outline-light { border: 1px solid rgba(255, 255, 255, 0.52); color: white; }
+.cfp-page { background: var(--color-bg); }
+.cfp-hero { padding: 78px 0 68px; border-bottom: 1px solid var(--color-border); background: radial-gradient(circle at 82% 20%, rgba(174, 123, 37, 0.18), transparent 30%), linear-gradient(135deg, #ffffff 0%, #f8f1e5 100%); }
+.cfp-hero-inner { max-width: 860px; }
+.cfp-hero .hero-lede { max-width: 760px; }
+.cfp-layout { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: clamp(48px, 7vw, 88px); align-items: start; }
+.cfp-content { display: grid; gap: 70px; }
+.cfp-content h2, .cfp-dates h2 { font-size: clamp(30px, 3vw, 42px); }
+.cfp-content h3 { margin: 34px 0 12px; color: var(--color-navy); font-family: var(--font-display); font-size: 24px; line-height: 1.2; }
+.cfp-content p { color: var(--color-muted); }
+.cfp-content a { color: var(--color-blue); font-weight: 700; }
+.cfp-content ul { margin: 18px 0 0; padding-left: 22px; }
+.cfp-content li + li { margin-top: 7px; }
+.cfp-topic-list { columns: 2; column-gap: 42px; }
+.cfp-topic-list li { break-inside: avoid; padding-right: 12px; }
+.cfp-note { padding: 18px 20px; border-left: 4px solid var(--color-gold); background: var(--color-cream); }
+.cfp-requirements { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+.cfp-card { padding: 26px; border: 1px solid var(--color-border); border-radius: 18px; background: white; box-shadow: var(--shadow-soft); }
+.cfp-card h3 { margin-top: 0; }
+.cfp-card ul { margin-bottom: 0; }
+.cfp-dates { position: sticky; top: 104px; padding: 30px; border: 1px solid var(--color-border); border-radius: 20px; background: white; box-shadow: var(--shadow-soft); }
+.cfp-dates h2 { font-size: 30px; }
+.cfp-dates dl { display: grid; gap: 0; margin: 26px 0 28px; }
+.cfp-dates dl div { padding: 16px 0; border-top: 1px solid var(--color-border); }
+.cfp-dates dt { color: var(--color-muted); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.cfp-dates dd { margin: 3px 0 0; color: var(--color-navy); font-weight: 800; }
+.cfp-dates .button { width: 100%; text-align: center; }
 .site-footer { padding: 54px 0 28px; background: #121a24; color: white; }
 .footer-grid { display: flex; justify-content: space-between; gap: 48px; }
 .footer-wordmark { color: white; }
@@ -171,6 +197,8 @@ h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.08; }
 	.committee-grid { grid-template-columns: repeat(2, 1fr); }
 	.sponsor-panel { grid-template-columns: 1fr; }
 	.registration-panel { grid-template-columns: 1fr; }
+	.cfp-layout { grid-template-columns: 1fr; }
+	.cfp-dates { position: static; }
 	.final-cta { align-items: flex-start; flex-direction: column; }
 	.cta-actions { justify-content: flex-start; }
 }
@@ -198,6 +226,9 @@ h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.08; }
 	.registration-intro { padding-top: 0; }
 	.registration-form-card { padding: 26px 20px; }
 	.form-grid { grid-template-columns: 1fr; }
+	.cfp-hero { padding: 52px 0 46px; }
+	.cfp-topic-list { columns: 1; }
+	.cfp-requirements { grid-template-columns: 1fr; }
 	.form-field-wide { grid-column: auto; }
 	.final-cta { padding: 36px 24px; border-radius: 18px; }
 	.cta-actions { width: 100%; }
