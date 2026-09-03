@@ -200,7 +200,7 @@ function confirmationText_(name) {
 		'You are registered for DecisionCAMP 2027, held online September 14–16, 2027.',
 		'Sessions run from 9:00 AM to 3:00 PM Eastern Time each day.',
 		'',
-		'Three calendar files are attached—one for each conference day.',
+		'Three calendar files are attached, one for each conference day.',
 		'',
 		'After September 10, please visit the “Register free” section of the DecisionCAMP 2027 website to receive the link for joining the live event:',
 		CONFIG.WEBSITE_URL + '#register',
@@ -216,7 +216,7 @@ function confirmationHtml_(name) {
 		<p>Hello ${safeName},</p>
 		<p>You are registered for <strong>DecisionCAMP 2027</strong>, held online September 14–16, 2027.</p>
 		<p>Sessions run from <strong>9:00 AM to 3:00 PM Eastern Time</strong> each day.</p>
-		<p>Three calendar files are attached—one for each conference day. Open them to add the sessions to your calendar.</p>
+		<p>Three calendar files are attached, one for each conference day. Open them to add the sessions to your calendar.</p>
 		<p><strong>After September 10:</strong> visit the <a href="${CONFIG.WEBSITE_URL}#register">Register free section of the DecisionCAMP 2027 website</a> to receive the link for joining the live event.</p>
 		<p>We look forward to seeing you!</p>
 		<p>Decision Management Community</p>
@@ -257,7 +257,7 @@ function calendarAttachment_(event) {
 		`DTSTAMP:${Utilities.formatDate(new Date(), 'UTC', "yyyyMMdd'T'HHmmss'Z'")}`,
 		`DTSTART:${event.startUtc}`,
 		`DTEND:${event.endUtc}`,
-		`SUMMARY:${CONFIG.EVENT_NAME} — Day ${event.day}`,
+		`SUMMARY:${CONFIG.EVENT_NAME} - Day ${event.day}`,
 		`DESCRIPTION:${escapeIcs_(description)}`,
 		'LOCATION:Online',
 		`URL:${CONFIG.WEBSITE_URL}#register`,
