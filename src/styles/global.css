@@ -223,7 +223,7 @@ h2 { margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.08; }
 @media (max-width: 640px) {
 	.container { width: min(100% - 24px, 1120px); }
 	.nav-wrap { min-height: 68px; }
-	.wordmark { font-size: 15px; }
+	.wordmark { align-items: flex-start; flex-direction: column; gap: 0; font-size: 14px; line-height: 1.2; }
 	.wordmark-logo { width: 90px; height: 36px; }
 	.header-cta { display: none; }
 	.hero-section { padding-top: 20px; }
